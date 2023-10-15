@@ -1,13 +1,13 @@
 const sumTwo = (a, b) => a + b;
 
 const memoize = (fn) => {
-  const data = {};
+  const cache = {};
 
   return (...args) => {
     const key = args.toString();
-    if (data[key] === undefined) data[key] = fn(...args);
+    if (cache[key] === undefined) cache[key] = fn(...args);
 
-    return data[key];
+    return cache[key];
   };
 };
 
